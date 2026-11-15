@@ -47,6 +47,16 @@ python simscale_mcp_server.py
 
 ---
 
+## Workbench Compatibility Note
+
+If you open an API-created or API-updated simulation in the SimScale web Workbench and see:
+
+> *"Your Simulation model version is not fully compatible with the Workbench. Edit mode is disabled to prevent unexpected breaking changes."*
+
+This is expected SimScale behavior when the `version` field in the `SimulationSpec` JSON differs from the latest Workbench UI schema version. It does **not** break API/MCP workflows—you can continue editing, validating, and running the simulation via MCP (`update_simulation`, `check_simulation_setup`, `start_simulation_run`), or **duplicate the simulation** in the SimScale Workbench UI if you want to edit it in the browser.
+
+---
+
 ## Available MCP Tools (42 Tools)
 
 ### Projects
