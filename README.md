@@ -4,46 +4,67 @@ A Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST
 
 ## Requirements
 
-- Python 3.11+ (tested on Python 3.14 / Windows 11)
-- `mcp>=2.0.0`
-- `requests>=2.31.0`
+- **OS:** Windows 11 (works on macOS/Linux as well)
+- **Python:** Python 3.11+ (tested on Python 3.14) — [python.org/downloads](https://www.python.org/downloads/) (check **"Add python.exe to PATH"** during installation)
+- **Git:** [git-scm.com](https://git-scm.com/) (optional if downloading the repository as a ZIP)
+- **Dependencies:** `mcp>=2.0.0,<3.0.0`, `requests>=2.31.0`
+- **SimScale API Key:** Generated from your SimScale account settings
 
-## Installation
+## Installation (Windows 11)
 
-```bash
-pip install -r requirements.txt
-```
+1. **Clone the repository** (or download and extract the ZIP) in PowerShell:
+
+   ```powershell
+   git clone https://github.com/HighMars1/simscale-mcp-server.git
+   cd simscale-mcp-server
+   ```
+
+2. **Create a virtual environment and install dependencies:**
+   *(Using `.venv\Scripts\python.exe -m pip` directly avoids PowerShell script execution-policy errors.)*
+
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
+
+3. **Verify the script compiles:**
+
+   ```powershell
+   .venv\Scripts\python.exe -m py_compile simscale_mcp_server.py
+   ```
 
 ## Configuration
 
-Set your SimScale API key in the environment before launching the server:
+Your MCP client launches this server automatically and passes configuration through environment variables:
 
-- `SIMSCALE_API_KEY`: Your SimScale API key (required)
-- `SIMSCALE_API_URL`: Optional base API URL (defaults to `https://api.simscale.com`)
-- `SIMSCALE_DOWNLOAD_DIR`: Optional directory confinement root for `download_simulation_result` (defaults to the current working directory)
+- `SIMSCALE_API_KEY` **(required):** Your SimScale REST API key.
+- `SIMSCALE_DOWNLOAD_DIR` **(strongly recommended):** Folder where `download_simulation_result` is allowed to save files (e.g. `C:/Users/<YourName>/Downloads/simscale`). If omitted, it defaults to the process working directory, which may be a read-only system/app folder when launched by an MCP client.
+- `SIMSCALE_API_URL` *(optional)*: Base SimScale API URL (defaults to `https://api.simscale.com`).
 
-## Usage
+### MCP Client Setup (`stdio`)
 
-```bash
-python simscale_mcp_server.py
-```
+Add the following entry to your MCP client's configuration file (for example in Google Antigravity, Claude Desktop, or Cursor).
 
-### Example MCP Client Configuration (`stdio`)
+> **Tip for Windows JSON:** Use forward slashes (`/`) in paths as shown below so you don't have to double-escape backslashes (`\\`). Replace `<YourName>` and the repo path with your actual paths.
 
 ```json
 {
   "mcpServers": {
     "simscale": {
-      "command": "python",
-      "args": ["C:/path/to/simscale-mcp-server/simscale_mcp_server.py"],
+      "command": "C:/path/to/simscale-mcp-server/.venv/Scripts/python.exe",
+      "args": [
+        "C:/path/to/simscale-mcp-server/simscale_mcp_server.py"
+      ],
       "env": {
         "SIMSCALE_API_KEY": "your-simscale-api-key",
-        "SIMSCALE_DOWNLOAD_DIR": "C:/path/to/downloads"
+        "SIMSCALE_DOWNLOAD_DIR": "C:/Users/<YourName>/Downloads/simscale"
       }
     }
   }
 }
 ```
+
+> **Note:** Because this is a `stdio` MCP server, running `simscale_mcp_server.py` directly in PowerShell will appear to hang while it waits for JSON-RPC messages on standard input. Always let your MCP client start it using the config above (press `Ctrl+C` if you ran it manually).
 
 ---
 
