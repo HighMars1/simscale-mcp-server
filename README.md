@@ -128,3 +128,10 @@ This is expected SimScale behavior when the `version` field in the `SimulationSp
 | `create_result_export(project_id, result_id, export_format)` | Write | Request an asynchronous format conversion/export for a `resultId`. |
 | `get_result_export(project_id, export_id)` | Read | Poll status and download URL of an export job. |
 | `download_simulation_result(download_url, output_path, overwrite)` | Write | Stream-download a result artifact into `SIMSCALE_DOWNLOAD_DIR` with atomic temp-file writes and cross-host `X-API-KEY` redirect stripping. |
+
+---
+
+## AI Disclosure
+
+Portions of the code, bug fixes, and documentation in this repository were generated and reviewed with the assistance of AI tools.
+
