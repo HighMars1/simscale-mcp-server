@@ -2,6 +2,8 @@
 
 An unoffical Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST API v0 (`https://api.simscale.com/v0`), using SI units. This code was developed using the offical SimScale SDK documentation as a reference point.
 
+> **Reference Note:** Endpoints, query parameters, enums, and request/response schemas in this server were verified against the official **SimScale Python SDK (`simscale-sdk` v19.1.0)** and SimScale REST API documentation. `simscale-sdk` is **not** required at runtime—the server communicates directly over HTTP using `requests`.
+
 ## Requirements
 
 - **Python:** Python 3.11+ (tested on Python 3.14/Windows 11)
