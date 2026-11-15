@@ -43,7 +43,6 @@ Your MCP client launches this server automatically and passes configuration thro
 
 Add the following entry to your MCP client's configuration file (for example in Google Antigravity, Claude Desktop, or Cursor).
 
-> **Tip for Windows JSON:** Use forward slashes (`/`) in paths as shown below so you don't have to double-escape backslashes (`\\`). Replace `<YourName>` and the repo path with your actual paths.
 
 ```json
 {
