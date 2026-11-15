@@ -4,7 +4,7 @@ A Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST
 
 ## Requirements
 
-- **Python:** Python 3.11+ (tested on Python 3.14)
+- **Python:** Python 3.11+ (tested on Python 3.14/Windows 11)
 - **Git:** [git-scm.com](https://git-scm.com/) (optional if downloading the repository as a ZIP)
 - **Dependencies:** `mcp>=2.0.0,<3.0.0`, `requests>=2.31.0`
 - **SimScale API Key:** Generated from your SimScale account settings
