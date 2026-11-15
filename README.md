@@ -1,6 +1,6 @@
 # SimScale MCP Server
 
-A Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST API v0 (`https://api.simscale.com/v0`), enforcing strict coherent SI units across projects, CAD imports, geometry primitives, meshes, and simulation specs.
+A Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST API v0 (`https://api.simscale.com/v0`), using SI units across projects, CAD imports, geometry primitives, meshes, and simulation specs. This code was developed using the offical SimScale SDK documentation as a reference point.
 
 ## Requirements
 
