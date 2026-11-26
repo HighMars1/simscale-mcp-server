@@ -150,3 +150,4 @@ This is expected SimScale behavior when the `version` field in the `SimulationSp
 
 Portions of the code, bug fixes, and documentation in this repository were generated and reviewed with the assistance of AI tools.
 
+[![M8ven Score](https://m8ven.ai/badge/mcp/highmars1-simscale-mcp-server-1qfcoi?v=3e8168c366bb5640177cbac31b8d017a)](https://m8ven.ai/mcp/highmars1-simscale-mcp-server-1qfcoi?s=readme)
