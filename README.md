@@ -2,6 +2,8 @@
 
 An unoffical Python MCP (`mcp` v2.x `MCPServer` over `stdio`) wrapper for the SimScale REST API v0 (`https://api.simscale.com/v0`), using SI units. This code was developed using the offical SimScale SDK documentation as a reference point.
 
+[![M8ven Score](https://m8ven.ai/badge/mcp/highmars1-simscale-mcp-server-1qfcoi?v=3e8168c366bb5640177cbac31b8d017a)](https://m8ven.ai/mcp/highmars1-simscale-mcp-server-1qfcoi?s=readme)
+
 ## Requirements
 
 - **Python:** Python 3.11+ (tested on Python 3.14/Windows 11)
@@ -149,5 +151,3 @@ If you open an API-created or API-updated simulation in the SimScale web Workben
 This is expected SimScale behavior when the `version` field in the `SimulationSpec` JSON differs from the latest Workbench UI schema version.
 
 Portions of the code, bug fixes, and documentation in this repository were generated and reviewed with the assistance of AI tools.
-
-[![M8ven Score](https://m8ven.ai/badge/mcp/highmars1-simscale-mcp-server-1qfcoi?v=3e8168c366bb5640177cbac31b8d017a)](https://m8ven.ai/mcp/highmars1-simscale-mcp-server-1qfcoi?s=readme)
